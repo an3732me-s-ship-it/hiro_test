@@ -1,14 +1,28 @@
-<a-scene embedded arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: ARUCO_ORIGINAL; debugUIEnabled: true;">
-  
-  <a-marker type="barcode" value="0">
-    <a-box position="0 0.5 0" color="red" scale="0.2 0.2 0.2"></a-box>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
 
-    <a-entity 
-      gltf-model="url(https://raw.githack.com/an3732me-s-ship-it/hiro_test/main/stair.glb)" 
-      scale="1 1 1" 
-      position="0 0.15 0">
-    </a-entity>
-  </a-marker>
+  <body style="margin: 0px; overflow: hidden;">
+    <a-scene 
+      embedded 
+      arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: ARUCO_ORIGINAL; debugUIEnabled: true;">
+      
+      <a-entity light="type: ambient; intensity: 1;"></a-entity>
 
-  <a-entity camera></a-entity>
-</a-scene>
+      <a-marker type="barcode" value="0">
+        <a-box position="0 0.5 0" color="red" scale="0.1 0.1 0.1"></a-box>
+
+        <a-entity 
+          gltf-model="url(https://raw.githack.com/an3732me-s-ship-it/hiro_test/main/stairs_v2.glb)" 
+          scale="1 1 1" 
+          position="0 0.15 0">
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
